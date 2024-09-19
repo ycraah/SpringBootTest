@@ -6,12 +6,9 @@
 </head>
 <body>
     <ul>
-        <li th:each="str: ${list}" th:text="${str}"></li>
-    </ul>
-    <ul>
-        <th:block th:each="str: ${list}">
-            <li>[[${str}]]</li>
-        </th:block>
+        <li th:each="str, status:${list}">
+            [[${status.index}]] -- [[${str}]]
+        </li>
     </ul>
 </body>
 </html>
