@@ -7,8 +7,7 @@
 <body>
     <ul>
         <li th:each="str, status:${list}">
-           <span th:if="${status.odd}"> ODD -- [[${str}]]</span>
-            <span th:unless="${status.odd}"> EVEN -- [[${str}]]</span>
+           <span th:text="${status.odd} ? 'ODD ---' + ${str} : 'EVEN ---' + ${str}"></span>
         </li>
     </ul>
 </body>
