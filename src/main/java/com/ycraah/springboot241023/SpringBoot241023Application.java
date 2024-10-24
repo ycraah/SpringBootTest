@@ -12,19 +12,10 @@ import java.util.Set;
 
 
 @SpringBootApplication
-public class SpringBoot241023Application implements CommandLineRunner {
-  private static final Logger log = LoggerFactory.getLogger(SpringBoot241023Application.class);
-
+public class SpringBoot241023Application {
   public static void main(String[] args) {
     SpringApplication.run(SpringBoot241023Application.class, args);
   }
 
-  @Override
-  public void run(String... args) throws Exception {
-    User user = new User("root", "root");
-    Validator validator = Validation.buildDefaultValidatorFactory().getValidator();
-    Set<ConstraintViolation<User>> violations = validator.validate(user);
-    violations.forEach(constraintViolation -> log.error(constraintViolation.getMessage()));
-  }
 }
 
